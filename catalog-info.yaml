@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: squealing-tuna-java-quarkus-gitops
+  description: This is GitOps manifest for squealing-tuna-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: squealing-tuna-java-quarkus
+    janus-idp.io/tekton: squealing-tuna-java-quarkus 
+    backstage.io/kubernetes-id: squealing-tuna-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:squealing-tuna-java-quarkus
